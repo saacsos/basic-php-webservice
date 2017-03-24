@@ -17,7 +17,7 @@ class Users {
             return $this->users;
         } else {
             $key = array_search($id, array_column($this->users, 'id'));
-            return $key ? $this->users[$key]: null;
+            return ($key !== false) ? $this->users[$key]: null;
         }
     }
 }
